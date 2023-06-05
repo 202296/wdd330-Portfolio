@@ -1,0 +1,13 @@
+@media only screen and (min-width: 32.5em) {
+    header {display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: blue;
+        border-radius: 3%;
+        box-shadow: 0px 0px 20px #000;
+        padding: 15px;
+        justify-content: center;
+        align-items: center;
+        }
+
+    .name { margin: 0 auto;}
+} 

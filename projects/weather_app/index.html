@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Application</title>
+    <meta name="description" content="weather application with days forecast">
+    <meta name="author" content="Mouhamed Koko">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" >
+
+
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>Weather Application</h1>
+        <h2 >Last Visit:<span class="today"></span></h2>
+    </header>
 
 
     <main>
@@ -16,11 +25,14 @@
             <div class="sidebar">
               <div>
                 <form class="search" id="search">
-                  <input type="text" id="query" placeholder="Search..." />
-                  <button><i class="fas fa-search"></i></button>
-                </form>
+                    <label for="query">Search:</label>
+                    <span>
+                    <input type="text" id="query" placeholder="Search..." >
+                    <button><i class="fas fa-search"></i><span class="button">&#x1F50D;</span></button>
+                    </span>
+                  </form>
                 <div class="weather-icon">
-                  <img id="icon" src="icons/sun/4.png" alt="" />
+                  <img id="icon" src="icons/sun/4.png" alt="" >
                 </div>
                 <div class="temperature">
                   <h1 id="temp">0</h1>
@@ -51,59 +63,59 @@
               </div>
             </div>
             <div class="main">
-              <nav>
-                <ul class="options">
+              <div class="nav">
+                <div class="options ul">
                   <button class="hourly">today</button>
                   <button class="week active">week</button>
-                </ul>
-                <ul class="options units">
+                </div>
+                <div class="options units ul">
                   <button class="celcius active">°C</button>
                   <button class="fahrenheit">°F</button>
-                </ul>
-              </nav>
+                </div>
+            </div>
               <div class="cards" id="weather-cards"></div>
               <div class="highlights">
                 <h2 class="heading">today's highlights</h2>
                 <div class="cards">
                   <div class="card2">
-                    <h4 class="card-heading">UV Index</h4>
+                    <h3 class="card-heading">UV Index</h3>
                     <div class="content">
-                      <p class="uv-index">0</p>
+                      <h4 class="uv-index">0</h4>
                       <p class="uv-text">Low</p>
                     </div>
                   </div>
                   <div class="card2">
-                    <h4 class="card-heading">Wind Status</h4>
+                    <h3 class="card-heading">Wind Status</h3>
                     <div class="content">
-                      <p class="wind-speed">0</p>
+                      <h4 class="wind-speed">0</h4>
                       <p>km/h</p>
                     </div>
                   </div>
                   <div class="card2">
-                    <h4 class="card-heading">Sunrise & Sunset</h4>
+                    <h3 class="card-heading">Sunrise & Sunset</h3>
                     <div class="content">
-                      <p class="sun-rise">0</p>
-                      <p class="sun-set">0</p>
+                      <h4 class="sun-rise">0</h4>
+                      <h4 class="sun-set">0</h4>
                     </div>
                   </div>
                   <div class="card2">
-                    <h4 class="card-heading">Humidity</h4>
+                    <h3 class="card-heading">Humidity</h3>
                     <div class="content">
-                      <p class="humidity">0</p>
+                      <h4 class="humidity">0</h4>
                       <p class="humidity-status">Normal</p>
                     </div>
                   </div>
                   <div class="card2">
-                    <h4 class="card-heading">Visibility</h4>
+                    <h3 class="card-heading">Visibility</h3>
                     <div class="content">
-                      <p class="visibilty">0</p>
+                      <h4 class="visibilty">0</h4>
                       <p class="visibilty-status">Normal</p>
                     </div>
                   </div>
                   <div class="card2">
-                    <h4 class="card-heading">Air Quality</h4>
+                    <h3 class="card-heading">Air Quality</h3>
                     <div class="content">
-                      <p class="air-quality">0</p>
+                      <h4 class="air-quality">0</h4>
                       <p class="air-quality-status">Normal</p>
                     </div>
                   </div>
@@ -117,6 +129,11 @@
 
 
 
-    <footer><p class="credits">Crafted with ❤️ by <a href="https://youtu.be/A2ianP1cG98">Open Source Coding</a></p></footer>
+    <footer>
+        <p class="credits" id="large"></p>
+    
+    </footer>
+
+    <script src="scripts/weather.js"></script>
 </body>
 </html>

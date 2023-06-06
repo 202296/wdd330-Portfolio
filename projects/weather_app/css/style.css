@@ -8,9 +8,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
-body {
+header {
+  font-family: "Roboto", sans-serif;
+}
+main {
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -22,6 +24,7 @@ body {
   background-size: cover;
   background-position: center;
   transition: background-image 0.3s ease;
+  font-family: "Open Sans", sans-serif;
 }
 img {
   width: 100%;
@@ -43,7 +46,7 @@ img {
   justify-content: space-between;
 }
 
-.search {
+.search span{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,6 +68,63 @@ img {
   outline: none;
   border: 1px solid var(--primary-color);
 }
+
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search span {
+  margin: 0;
+}
+
+
+/* Rounded edges and shadows */
+input {
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+
+/* Enlarge on focus */
+input:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Shrink on blur */
+input:blur {
+  transform: scale(1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Wiggle animation for bad data */
+input.invalid {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Border styles */
+input {
+  border: 1px solid #ccc;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+/* Keyframes for the wiggle animation */
+@keyframes wiggle {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+  100% { transform: translateX(0); }
+}
+
 .search button {
   min-width: 40px;
   height: 40px;
@@ -76,7 +136,10 @@ img {
   font-size: 14px;
   cursor: pointer;
 }
-.search ul {
+span.button {
+  display: none;
+}
+.search .ul {
   max-height: 300px;
   overflow-y: auto;
   position: absolute;
@@ -87,19 +150,19 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
-.search ul li {
+.search .ul li {
   padding: 10px 15px;
   border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
   text-transform: capitalize;
 }
-.search ul li:last-child {
+.search .ul li:last-child {
   border-bottom: none;
 }
-.search ul li:hover {
+.search .ul li:hover {
   background-color: #f1f1f1;
 }
-.search ul li.active {
+.search .ul li.active {
   background-color: #f1f1f1;
 }
 .weather-icon {
@@ -161,17 +224,17 @@ img {
   padding-bottom: 90px;
 }
 
-.main nav {
+.main .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.main nav .options {
+.main .nav .options {
   display: flex;
   gap: 20px;
   align-items: center;
 }
-.main nav .options button {
+.main .nav .options button {
   border: none;
   background: none;
   font-size: 16px;
@@ -180,18 +243,18 @@ img {
   cursor: pointer;
   text-transform: capitalize;
 }
-.main nav .options button.active {
-  color: var(--primary-color);
+.main .nav .options button.active {
+  color: rgb(0, 0, 255);
 }
 
-.main nav .units button {
+.main .nav .units button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   color: #1a1a1a;
   background-color: #fff;
 }
-.main nav .units button.active {
+.main .nav .units button.active {
   color: #fff;
   background-color: #1a1a1a;
 }
@@ -252,21 +315,21 @@ img {
   flex-direction: column;
 }
 .card2 .card-heading {
-  color: #c2c2c2;
+  color: #3b3b3d;
 }
 
 .card2 .content {
   margin-top: 20px;
 }
-.card2 .content p:first-child {
+.card2 .content h4:first-child {
   text-align: center;
   font-size: 30px;
 }
-.card2 .content p:nth-child(2) {
+.card2 .content h4:nth-child(2) {
   font-size: 12px;
   margin-top: 20px;
   text-align: left;
 }
-/* .credits {
-  
-}  */
+.credits {
+  font-family: "Open Sans", sans-serif;
+} 

@@ -1,3 +1,61 @@
+const d = new Date();
+const day = d.toLocaleString('en-us', {  weekday: 'long' });
+const monthName = d.toLocaleString('en-us', { month: "long" });
+const dates = d.getDate();
+const year = d.getFullYear();
+const lastModifDate = document.createElement('h2');
+
+
+lastModifDate.innerHTML = `${day}, ${dates} ${monthName} ${year}`
+
+
+const fullYear = new Date().getFullYear();
+
+const parag = document.createElement('h4');
+parag.textContent = `Last Modification: ${document.lastModified}`;
+const sumbol = document.getElementById('large');
+sumbol.innerHTML = `&copy; ${fullYear} weather App | Mouhamed Koko | WDD 330 Project | Last Modification: ${document.lastModified}`;
+
+
+
+const lastVisitDisplay = document.querySelector(".today");
+
+// Get the current date
+const curDate = new Date();
+// Get the current time
+const dateTime = curDate.getTime();
+
+
+// Get the date of the last visit from local storage
+const lastVisit = localStorage.getItem('lastVisit');
+
+if (lastVisit) {
+  // Calculate the difference in time between the last visit and the current visit
+  const difTime = dateTime - new Date(lastVisit).getTime();
+
+  // Convert the time difference to days and round to the nearest whole number
+  const difDays = Math.round(difTime / (1000 * 60 * 60 * 24));
+
+  // Display the number of days since the last visit
+  if (difDays < 1){
+  lastVisitDisplay.innerText = `Today`;
+
+  } else{
+   if (difDays == 1) {
+      lastVisitDisplay.innerText = `${difDays} day ago`;
+   }
+   else{
+   lastVisitDisplay.innerText = `${difDays} days ago`;
+   }
+  }
+} else{
+   lastVisitDisplay.innerText = "This is your first visit"
+}
+
+// Store the current visit date in local storage
+localStorage.setItem('lastVisit', curDate);
+
+
 const temp = document.getElementById("temp"),
   date = document.getElementById("date-time"),
   condition = document.getElementById("condition"),
@@ -82,7 +140,7 @@ getPublicIp();
 // function to get weather data
 function getWeatherData(city, unit, hourlyorWeek) {
   fetch(
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`,
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=R3AE8BLYMWJ238L5B5CC5TZ8M&contentType=json`,
     {
       method: "GET",
       headers: {},
@@ -131,7 +189,7 @@ function updateForecast(data, unit, type) {
   if (type === "day") {
     numCards = 24;
   } else {
-    numCards = 7;
+    numCards = 8;
   }
   for (let i = 0; i < numCards; i++) {
     let card = document.createElement("div");
@@ -467,63 +525,63 @@ function changeTimeSpan(unit) {
 cities = [
   {
     country: "CI",
-    name: "Abbottabad",
-    lat: "34.1463",
-    lng: "73.21168",
+    name: "Abidjan",
+    lat: "5.32691",
+    lng: "-4.02173",
   },
   {
-    country: "CI",
-    name: "Adilpur",
-    lat: "27.93677",
-    lng: "69.31941",
+    country: "EGL",
+    name: "London",
+    lat: "51.5064",
+    lng: "-0.12721",
   },
   {
-    country: "CI",
-    name: "Ahmadpur East",
-    lat: "29.14269",
-    lng: "71.25771",
+    country: "US",
+    name: "New York",
+    lat: "40.7146",
+    lng: "-74.0071",
   },
   {
-    country: "CI",
-    name: "Ahmadpur Sial",
-    lat: "30.67791",
-    lng: "71.74344",
+    country: "RU",
+    name: "Moscow",
+    lat: "55.757",
+    lng: "37.615",
   },
   {
-    country: "CI",
-    name: "Akora",
-    lat: "34.00337",
-    lng: "72.12561",
+    country: "CH",
+    name: "Shanghai",
+    lat: "39.9066",
+    lng: "116.388",
   },
   {
-    country: "CI",
-    name: "Aliabad",
-    lat: "36.30703",
-    lng: "74.61545",
+    country: "BR",
+    name: "Sao_Paulo",
+    lat: "-15.7783",
+    lng: "-47.9291",
   },
   {
-    country: "CI",
-    name: "Alik Ghund",
-    lat: "30.48976",
-    lng: "67.52177",
+    country: "IND",
+    name: "Kolkata",
+    lat: "18.0144",
+    lng: "74.6724",
   },
   {
-    country: "CI",
-    name: "Alipur",
-    lat: "29.38242",
-    lng: "70.91106",
+    country: "CA",
+    name: "Toronto",
+    lat: "45.4218",
+    lng: "-75.6912",
   },
   {
-    country: "CI",
-    name: "Alizai",
-    lat: "33.53613",
-    lng: "70.34607",
+    country: "FR",
+    name: "Paris",
+    lat: "48.8572",
+    lng: "2.34141",
   },
   {
-    country: "CI",
-    name: "Alpurai",
-    lat: "34.92039",
-    lng: "72.63265",
+    country: "US",
+    name: "idaho",
+    lat: "43.6076",
+    lng: "-116.193",
   },
   
 ];

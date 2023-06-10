@@ -242,7 +242,7 @@ function getIcon(condition) {
 
 // function to change background depending on weather conditions
 function changeBackground(condition) {
-  const body = document.querySelector("body");
+  const main = document.querySelector("main");
   let bg = "";
   if (condition === "partly-cloudy-day") {
     bg = "https://i.ibb.co/qNv7NxZ/pc.webp";
@@ -257,7 +257,7 @@ function changeBackground(condition) {
   } else {
     bg = "https://i.ibb.co/qNv7NxZ/pc.webp";
   }
-  body.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(${bg})`;
+  main.style.backgroundImage = `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(${bg})`;
 }
 
 //get hours from hh:mm:ss
@@ -397,29 +397,29 @@ search.addEventListener("input", function (e) {
 
   this.parentNode.appendChild(a);
 
-  for (i = 0; i < cities.length; i++) {
-    /*check if the item starts with the same letters as the text field value:*/
-    if (
-      cities[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()
-    ) {
-      /*create a li element for each matching element:*/
-      b = document.createElement("li");
-      /*make the matching letters bold:*/
-      b.innerHTML =
-        "<strong>" + cities[i].name.substr(0, val.length) + "</strong>";
-      b.innerHTML += cities[i].name.substr(val.length);
-      /*insert a input field that will hold the current array item's value:*/
-      b.innerHTML += "<input type='hidden' value='" + cities[i].name + "'>";
-      /*execute a function when someone clicks on the item value (DIV element):*/
-      b.addEventListener("click", function (e) {
-        /*insert the value for the autocomplete text field:*/
-        search.value = this.getElementsByTagName("input")[0].value;
-        removeSuggestions();
-      });
+//   for (i = 0; i < cities.length; i++) {
+//     /*check if the item starts with the same letters as the text field value:*/
+//     if (
+//       cities[i].name.substr(0, val.length).toUpperCase() == val.toUpperCase()
+//     ) {
+//       /*create a li element for each matching element:*/
+//       b = document.createElement("li");
+//       /*make the matching letters bold:*/
+//       b.innerHTML =
+//         "<strong>" + cities[i].name.substr(0, val.length) + "</strong>";
+//       b.innerHTML += cities[i].name.substr(val.length);
+//       /*insert a input field that will hold the current array item's value:*/
+//       b.innerHTML += "<input type='hidden' value='" + cities[i].name + "'>";
+//       /*execute a function when someone clicks on the item value (DIV element):*/
+//       b.addEventListener("click", function (e) {
+//         /*insert the value for the autocomplete text field:*/
+//         search.value = this.getElementsByTagName("input")[0].value;
+//         removeSuggestions();
+//       });
 
-      a.appendChild(b);
-    }
-  }
+//       a.appendChild(b);
+//     }
+//   }
 });
 /*execute a function presses a key on the keyboard:*/
 search.addEventListener("keydown", function (e) {
@@ -522,68 +522,68 @@ function changeTimeSpan(unit) {
 
 // Cities add your own to get in search
 
-cities = [
-  {
-    country: "CI",
-    name: "Abidjan",
-    lat: "5.32691",
-    lng: "-4.02173",
-  },
-  {
-    country: "EGL",
-    name: "London",
-    lat: "51.5064",
-    lng: "-0.12721",
-  },
-  {
-    country: "US",
-    name: "New York",
-    lat: "40.7146",
-    lng: "-74.0071",
-  },
-  {
-    country: "RU",
-    name: "Moscow",
-    lat: "55.757",
-    lng: "37.615",
-  },
-  {
-    country: "CH",
-    name: "Shanghai",
-    lat: "39.9066",
-    lng: "116.388",
-  },
-  {
-    country: "BR",
-    name: "Sao_Paulo",
-    lat: "-15.7783",
-    lng: "-47.9291",
-  },
-  {
-    country: "IND",
-    name: "Kolkata",
-    lat: "18.0144",
-    lng: "74.6724",
-  },
-  {
-    country: "CA",
-    name: "Toronto",
-    lat: "45.4218",
-    lng: "-75.6912",
-  },
-  {
-    country: "FR",
-    name: "Paris",
-    lat: "48.8572",
-    lng: "2.34141",
-  },
-  {
-    country: "US",
-    name: "idaho",
-    lat: "43.6076",
-    lng: "-116.193",
-  },
+// cities = [
+//   {
+//     country: "CI",
+//     name: "Abidjan",
+//     lat: "5.32691",
+//     lng: "-4.02173",
+//   },
+//   {
+//     country: "EGL",
+//     name: "London",
+//     lat: "51.5064",
+//     lng: "-0.12721",
+//   },
+//   {
+//     country: "US",
+//     name: "New York",
+//     lat: "40.7146",
+//     lng: "-74.0071",
+//   },
+//   {
+//     country: "RU",
+//     name: "Moscow",
+//     lat: "55.757",
+//     lng: "37.615",
+//   },
+//   {
+//     country: "CH",
+//     name: "Shanghai",
+//     lat: "39.9066",
+//     lng: "116.388",
+//   },
+//   {
+//     country: "BR",
+//     name: "Sao_Paulo",
+//     lat: "-15.7783",
+//     lng: "-47.9291",
+//   },
+//   {
+//     country: "IND",
+//     name: "Kolkata",
+//     lat: "18.0144",
+//     lng: "74.6724",
+//   },
+//   {
+//     country: "CA",
+//     name: "Toronto",
+//     lat: "45.4218",
+//     lng: "-75.6912",
+//   },
+//   {
+//     country: "FR",
+//     name: "Paris",
+//     lat: "48.8572",
+//     lng: "2.34141",
+//   },
+//   {
+//     country: "US",
+//     name: "idaho",
+//     lat: "43.6076",
+//     lng: "-116.193",
+//   },
   
-];
+// ];
 
 

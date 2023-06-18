@@ -1,0 +1,42 @@
+@media only screen and (max-width: 800px) {
+    .content .social img{
+        max-width: 35px;
+      }
+      .content .logo img {
+        max-width: 80px;
+      }
+      main {
+        padding: 0;
+      }
+
+      .wrapper {
+        border-radius: 0;
+      }
+      .main {
+        padding-left: 25px;
+      }
+      .temperature #temp {
+        font-size: 40px;
+      }
+      .temperature span {
+        font-size: 25px;
+      }
+      .condition-rain {
+        font-size: 15px;
+      }
+      #location {
+        font-size: 20px;
+      }
+      .search span {
+        display: grid;
+      }
+      .search span .button {
+        display: none;
+      }
+      .app_name h1{
+        font-size: 1.5rem;
+      }
+      .visit h2 {
+        font-size: 1.3rem;
+      }
+}

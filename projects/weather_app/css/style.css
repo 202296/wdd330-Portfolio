@@ -9,16 +9,51 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 header {
   font-family: "Roboto", sans-serif;
   text-align: center;
   padding: 15px;
 }
+.app_name h1{
+  font-size: 3rem;
+}
+.visit {
+  max-width: 100%;
+  background-color: #007bff;
+}
+.visit h2 {
+  margin-top: 15px;
+  font-size: 2rem;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+.content {
+  display: flex;
+  grid-gap: 5px;
+  justify-content: space-between;
+}
+.content .social {
+  display: flex;
+}
+.content .youtube {
+  margin: 0 10px;
+}
+.content .social img{
+  max-width: 70px;
+}
+.content .logo img {
+  max-width: 150px;
+  border-radius: 250px;
+}
+img {
+  max-width: 100%;
+}
 main {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
-  min-width: 1000px;
+  max-width: 100%;
   padding: 50px;
   background: var(--primary-color);
   background-size: cover;
@@ -26,19 +61,14 @@ main {
   transition: background-image 0.3s ease;
   font-family: "Open Sans", sans-serif;
 }
-img {
-  width: 100%;
-}
 .wrapper {
   display: flex;
-  width: 1200px;
-  min-width: 900px;
+  max-width: 100%;
   border-radius: 20px;
   overflow: hidden;
 }
 .sidebar {
-  width: 30%;
-  min-width: 250px;
+  max-width: 30%;
   padding: 20px;
   background: rgba(255, 255, 255, 0.815);
   display: flex;
@@ -166,14 +196,13 @@ span.button {
   background-color: #f1f1f1;
 }
 .weather-icon {
-  width: 100%;
-  height: 150px;
+  max-width: 100%;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 100px;
 }
 .weather-icon #icon {
-  width: 80%;
+  max-width: 80%;
   object-fit: cover;
 }
 .temperature {
@@ -190,8 +219,8 @@ span.button {
   display: block;
 }
 .divider {
-  width: 100%;
-  height: 1px;
+  max-width: 100%;
+  min-height: 1.5px;
   background: #e9ecef;
   margin: 20px 0;
 }
@@ -216,8 +245,7 @@ span.button {
   margin-top: 10px;
 }
 .main {
-  width: 100%;
-  min-width: 400px;
+  max-width: 100%;
   padding: 20px 40px;
   background-color: #f6f6f8;
   position: relative;
@@ -332,6 +360,7 @@ span.button {
 }
 .credits {
   font-family: "Open Sans", sans-serif;
+  font-weight: bold;
   padding: 15px;
   text-align: center;
 } 
